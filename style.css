@@ -1,0 +1,135 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+select {
+    display: block;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2858a6; /* Darker blue text */
+    background-color: white; /* Light background for contrast */
+    border: 2px solid #336dcc; /* Match button theme */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(51, 109, 204, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+select:hover {
+    background-color: #f0f6ff; /* Subtle light blue background */
+    box-shadow: 0 4px 8px rgba(40, 88, 166, 0.2);
+}
+
+/* Focus */
+select:focus {
+    outline: none;
+    border-color: #2858a6;
+    box-shadow: 0 0 0 3px rgba(51, 109, 204, 0.25);
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1rem;
+    margin: auto;
+}
+
+table th, td {
+    padding: 0.8rem 1.4rem;
+}
+
+input {
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+    width: 4rem;
+}
+
+#buttoncontainer {
+    width: 38rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#rowbuttons, #columnbuttons {
+    display: inline-block;
+}
+
+.tablebuttons {
+    background-color: #336dcc; /* Softer medium blue */
+    color: white;
+    padding: 0.6em 1.4em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(51, 109, 204, 0.3);
+}
+
+.tablebuttons:hover {
+    background-color: #2858a6; /* Darker blue on hover */
+    box-shadow: 0 6px 12px rgba(40, 88, 166, 0.35);
+}
+
+.tablebuttons:active {
+    background-color: #1e4480; /* Even deeper when pressed */
+    box-shadow: 0 2px 4px rgba(30, 68, 128, 0.4);
+}
+
+#submitbutton {
+    display: block;
+    padding: 1em 2em;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#resultscontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8rem;
+}
+
+.results {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 14px;
+    }
+
+    #rowbuttons, #columnbuttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #buttoncontainer {
+        width: 20rem;
+    }
+}

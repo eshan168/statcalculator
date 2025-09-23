@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Website</title>
+</head>
+<body>
+
+    <h1>Chi-squares calculator</h1>
+
+    <select onchange="changetable()" id="selecttest">
+        <option value="independence">Chi-squares test for independence</option>
+        <option value="homogeneity">Chi-squares test for homogeneity</option>
+        <option value="gof">Chi-squares test for goodness of fit</option>
+    </select>
+
+    <div id="buttoncontainer">
+        <div id="rowbuttons">
+            <button class="tablebuttons" id="addrow" onclick="addrow()">Add Row</button>
+            <button class="tablebuttons" id="deleterow" onclick="deleterow()">Delete Row</button>
+        </div>
+        <div id="columnbuttons">
+            <button class="tablebuttons" id="addcolumn" onclick="addcolumn()">Add Column</button>
+            <button class="tablebuttons" id="deletecolumn" onclick="deletecolumn()">Delete Column</button>
+        </div>
+    </div>
+
+    <table id="maintable">
+        <tr>
+            <th></th>
+            <th>Category 1</th>
+            <th>Category 2</th>
+        </tr>
+        <tr>
+            <td>Group 1</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Group 2</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+    
+    <button class="tablebuttons" id="submitbutton" onclick="tableresults()">Calculate</button>
+
+    <div id="resultscontainer">
+        <p class="results">Degrees of freedom: <strong id="df"></strong></p>
+        <p class="results">Chi-squares statistic: <strong id="teststatistic"></strong></p>
+        <p class="results">P-value: <strong id="pvalue"></strong></p>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
