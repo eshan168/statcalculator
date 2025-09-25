@@ -70,8 +70,8 @@ input {
     display: inline-block;
 }
 
-/* .mainbuttons {
-    background-color: #336dcc;
+.tablebuttons {
+    background-color: #336dcc; /* Softer medium blue */
     color: white;
     padding: 0.6em 1.4em;
     font-size: 1rem;
@@ -83,15 +83,15 @@ input {
     box-shadow: 0 4px 6px rgba(51, 109, 204, 0.3);
 }
 
-.mainbuttons:hover {
-    background-color: #2858a6;
+.tablebuttons:hover {
+    background-color: #2858a6; /* Darker blue on hover */
     box-shadow: 0 6px 12px rgba(40, 88, 166, 0.35);
 }
 
-.mainbuttons:active {
-    background-color: #1e4480;
+.tablebuttons:active {
+    background-color: #1e4480; /* Even deeper when pressed */
     box-shadow: 0 2px 4px rgba(30, 68, 128, 0.4);
-} */
+}
 
 #submitbutton {
     display: block;
