@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpg" href="stats/images/chisquared.jpg">
     <link rel="stylesheet" href="http://127.0.0.1:5500/Web/stats/main.css">
     <title>Test for Slope of Regression Line</title>
 </head>
@@ -21,12 +19,12 @@
 
     <div id="buttoncontainer">
         <div id="rowbuttons">
-            <button class="tablebuttons" id="addrow" onclick="addrow()">Add Row</button>
-            <button class="tablebuttons" id="deleterow" onclick="deleterow()">Delete Row</button>
+            <button class="mainbuttons" id="addrow" onclick="addrow()">Add Row</button>
+            <button class="mainbuttons" id="deleterow" onclick="deleterow()">Delete Row</button>
         </div>
         <div id="columnbuttons">
-            <button class="tablebuttons" id="addcolumn" onclick="addcolumn()">Add Column</button>
-            <button class="tablebuttons" id="deletecolumn" onclick="deletecolumn()">Delete Column</button>
+            <button class="mainbuttons" id="addcolumn" onclick="addcolumn()">Add Column</button>
+            <button class="mainbuttons" id="deletecolumn" onclick="deletecolumn()">Delete Column</button>
         </div>
     </div>
 
@@ -48,7 +46,7 @@
         </tr>
     </table>
     
-    <button class="tablebuttons" id="submitbutton" onclick="tableresults()">Calculate</button>
+    <button class="mainbuttons" id="submitbutton" onclick="tableresults()">Calculate</button>
 
     <div id="resultscontainer">
         <p class="results">Degrees of freedom: <strong id="df"></strong></p>
