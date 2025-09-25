@@ -70,29 +70,6 @@ input {
     display: inline-block;
 }
 
-.tablebuttons {
-    background-color: #336dcc; /* Softer medium blue */
-    color: white;
-    padding: 0.6em 1.4em;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(51, 109, 204, 0.3);
-}
-
-.tablebuttons:hover {
-    background-color: #2858a6; /* Darker blue on hover */
-    box-shadow: 0 6px 12px rgba(40, 88, 166, 0.35);
-}
-
-.tablebuttons:active {
-    background-color: #1e4480; /* Even deeper when pressed */
-    box-shadow: 0 2px 4px rgba(30, 68, 128, 0.4);
-}
-
 #submitbutton {
     display: block;
     padding: 1em 2em;
