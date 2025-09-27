@@ -118,10 +118,24 @@ input {
 
 #info{
     text-align: center;
-    width: 40%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 8rem;
+    width: 50%;
+    border: solid 2px #3a6fc4;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+}
+
+#instructions{
+    width: 100%;
+    margin: auto;
+    padding-bottom: 0.5rem;
+}
+
+#description{
+    width: 80%;
+    margin: auto;
 }
 
 #info ul{
@@ -146,7 +160,17 @@ input {
         width: 20rem;
     }
 
-    #info{
+    #info {
         width: 90%;
+    }
+
+    #instructions{
+        width: 100%;
+        margin: auto;
+    }
+    
+    #description{
+        width: 100%;
+        margin: auto;
     }
 }
