@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="iyEyKD8N87tGd0IBuGC3Q0mChNf3YyZd7mkaIMJdRtI"/>
+
+    <!-- Meta description (shows in Google search results) -->
+    <meta name="description" content="Free Chi-square calculator for independence, homogeneity, and goodness-of-fit tests. Get chi-square statistic, degrees of freedom, and p-value instantly.">
+
+    <!-- Keywords (not as important now, but can help a little) -->
+    <meta name="keywords" content="chi-square calculator, chi square test online, chi square independence, goodness of fit, chi square p-value">
+
+    <!-- Open Graph (for social sharing) -->
+    <meta property="og:title" content="Chi-square Calculator: Independence, Homogeneity & Goodness of Fit">
+    <meta property="og:description" content="Instantly calculate chi-square statistics, p-values, and degrees of freedom online. Supports independence, homogeneity, and goodness-of-fit tests.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eshan168.github.io/chisquare">
+    <meta property="og:image" content="https://eshan168.github.io/images/chisquared.jpg">
+
     <link rel="stylesheet" href="stylesheets/chisquare.css">
     <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="icon" type="image/jpg" href="http://127.0.0.1:5500/Web/stats/images/chisquared.jpg">
-    <title>Chi-square Calculator Independence and Goodness of Fit</title>
+    <link rel="icon" type="image/jpg" href="images/chisquared.jpg" alt="Chi-square test illustration">
+    <title>Chi-square Calculator: Independence, Homogeneity & Goodness of Fit</title>
 </head>
 <body>
 
@@ -56,10 +70,36 @@
         <p class="results">P-value: <strong id="pvalue"></strong></p>
     </div>
 
+    <section id="info">
+
+        <h2>How to Use</h2>
+        <p>Select from Chi-square test for independence, homogeneity, or goodness of fit.</p>
+        <p>Enter observed frequencies into the table and click "Calculate" to get results.</p>
+
+        <h2>What is a Chi-square Test?</h2>
+        <p>The chi-square test is a statistical method used to determine if there is a significant association between categorical variables. Common applications include:</p>
+        <ul>
+            <li><strong>Independence:</strong> Testing if two categorical variables are related.</li>
+            <li><strong>Homogeneity:</strong> Comparing distributions across groups.</li>
+            <li><strong>Goodness of Fit:</strong> Checking if observed data matches expected proportions.</li>
+        </ul>
+    </section>
+
     <!-- <a href="http://127.0.0.1:5500/Web/stats/regression/regression.html">link</a> -->
 
     <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script src="scripts/chisquare.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "WebApplication",
+          "name": "Chi-square Calculator",
+          "url": "https://eshan168.github.io/statcalculator",
+          "description": "Free online chi-square calculator for independence, homogeneity, and goodness-of-fit tests.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All"
+        }
+    </script>
     
 </body>
 </html>

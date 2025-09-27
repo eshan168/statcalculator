@@ -108,12 +108,25 @@ input {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
 .results {
     margin-bottom: 0.25rem;
     font-size: 1rem;
+}
+
+#info{
+    text-align: center;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 8rem;
+}
+
+#info ul{
+    list-style-type: none;
+    padding: 0;
 }
 
 @media (max-width:768px) {
@@ -131,5 +144,9 @@ input {
 
     #buttoncontainer {
         width: 20rem;
+    }
+
+    #info{
+        width: 90%;
     }
 }
