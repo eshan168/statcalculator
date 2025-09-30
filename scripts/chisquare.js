@@ -10,6 +10,8 @@ const df = document.getElementById("df");
 const teststatistic = document.getElementById("teststatistic");
 const pvalue = document.getElementById("pvalue");
 
+addEventListener("keydown", focuscell);
+
 function addrow() {
     if (table.rows.length >= 10){
         return;
@@ -174,5 +176,54 @@ function goftable() {
         for (let i=0; i<len; i++){
             row.deleteCell(-1);
         }
+    }
+}
+
+function getcell() {
+    let element = document.activeElement.parentElement;
+    let row = element.parentElement.rowIndex;
+    let column = element.cellIndex;
+    return [row,column]
+}
+
+function focuscell(event) {
+    let coords = getcell();
+    let row = coords[0];
+    let column = coords[1];
+    if (event.key == "Enter" || event.key == "ArrowDown"){
+        downfocus(row,column)
+    }
+    else if (event.key == "ArrowUp"){
+        upfocus(row,column)
+    }
+    else if (event.key == "ArrowLeft"){
+        leftfocus(row,column)
+    }
+    else if (event.key == "ArrowRight"){
+        rightfocus(row,column)
+    }
+}
+
+function upfocus(row,column) {
+    if (row > 1){
+        table.rows[row-1].cells[column].querySelector("input").focus();
+    }
+}
+
+function downfocus(row,column) {
+    if (row < table.rows.length-1){
+        table.rows[row+1].cells[column].querySelector("input").focus();
+    }
+}
+
+function leftfocus(row,column) {
+    if (column > 1){
+        table.rows[row].cells[column-1].querySelector("input").focus();
+    }
+}
+
+function rightfocus(row,column) {
+    if (column < table.rows[0].cells.length-1){
+        table.rows[row].cells[column+1].querySelector("input").focus();
     }
 }
