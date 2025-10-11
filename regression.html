@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/regression.css">
     <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="icon" type="image/jpg" href="regression.png">
     <title>Test for Slope of Regression Line</title>
 </head>
 <body>
@@ -12,41 +13,36 @@
     <h1>Slope T-test Calculator</h1>
 
     <select onchange="changetable()" id="selecttest">
-        <option value="independence">Chi-squares test for independence</option>
-        <option value="homogeneity">Chi-squares test for homogeneity</option>
-        <option value="gof">Chi-squares test for goodness of fit</option>
+        <option value="independence">Input Data</option>
+        <option value="homogeneity">Input Stats</option>
     </select>
 
-    <div id="buttoncontainer">
-        <div id="rowbuttons">
-            <button class="mainbuttons" id="addrow" onclick="addrow()">Add Row</button>
-            <button class="mainbuttons" id="deleterow" onclick="deleterow()">Delete Row</button>
-        </div>
-        <div id="columnbuttons">
-            <button class="mainbuttons" id="addcolumn" onclick="addcolumn()">Add Column</button>
-            <button class="mainbuttons" id="deletecolumn" onclick="deletecolumn()">Delete Column</button>
-        </div>
+    <div id="regressiontable">
+        <table id="maintable">
+            <tr>
+                <th></th>
+                <th>X</th>
+                <th>Y</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+        </table>
     </div>
 
-    <table id="maintable">
-        <tr>
-            <th></th>
-            <th>Category 1</th>
-            <th>Category 2</th>
-        </tr>
-        <tr>
-            <td>Group 1</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-        </tr>
-        <tr>
-            <td>Group 2</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-        </tr>
-    </table>
+    <div id="regressioninput">
+        <label>X Mean</label>
+        <input class="datainput">
+    </div>
     
-    <button class="mainbuttons" id="submitbutton" onclick="tableresults()">Calculate</button>
+    <button class="mainbuttons" id="submitbutton" onclick="results()">Calculate</button>
 
     <div id="resultscontainer">
         <p class="results">Degrees of freedom: <strong id="df"></strong></p>
@@ -54,10 +50,9 @@
         <p class="results">P-value: <strong id="pvalue"></strong></p>
     </div>
 
-    <a href="http://127.0.0.1:5500/Web/stats/chi-square/index.html">link</a>
-
     <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script src="scripts/regression.js"></script>
+    <script src="scripts/table.js"></script>
     
 </body>
 </html>

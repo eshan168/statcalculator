@@ -3,14 +3,18 @@ html {
     font-size: 16px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     font-size: 3.5rem;
     text-align: center;
 }
 
 select {
-    display: block;
-    margin: auto;
     margin-bottom: 1.5rem;
     padding: 0.8rem 2rem;
     font-size: 1rem;
@@ -42,7 +46,6 @@ table, th, td {
     border-collapse: collapse;
     text-align: center;
     font-size: 1rem;
-    margin: auto;
 }
 
 table th, td {
@@ -58,8 +61,6 @@ input {
 
 #buttoncontainer {
     width: 38rem;
-    margin-right: auto;
-    margin-left: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,35 +71,10 @@ input {
     display: inline-block;
 }
 
-/* .mainbuttons {
-    background-color: #336dcc;
-    color: white;
-    padding: 0.6em 1.4em;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(51, 109, 204, 0.3);
-}
-
-.mainbuttons:hover {
-    background-color: #2858a6;
-    box-shadow: 0 6px 12px rgba(40, 88, 166, 0.35);
-}
-
-.mainbuttons:active {
-    background-color: #1e4480;
-    box-shadow: 0 2px 4px rgba(30, 68, 128, 0.4);
-} */
-
 #submitbutton {
     display: block;
     padding: 1em 2em;
     font-size: 1rem;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -118,8 +94,6 @@ input {
 
 #info{
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
     margin-bottom: 8rem;
     width: 50%;
     border: solid 2px #3a6fc4;
@@ -129,13 +103,11 @@ input {
 
 #instructions{
     width: 100%;
-    margin: auto;
     padding-bottom: 0.5rem;
 }
 
 #description{
     width: 80%;
-    margin: auto;
 }
 
 #info ul{
@@ -166,11 +138,9 @@ input {
 
     #instructions{
         width: 100%;
-        margin: auto;
     }
     
     #description{
         width: 100%;
-        margin: auto;
     }
 }

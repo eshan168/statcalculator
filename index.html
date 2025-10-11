@@ -19,8 +19,8 @@
 
     <link rel="stylesheet" href="stylesheets/chisquare.css">
     <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="icon" type="image/jpg" href="images/chisquared.png">
-    <title>Chi-square Calculator: Independence, Homogeneity & Goodness of Fit</title>
+    <link rel="icon" type="image/jpg" href="chisquared.png" alt="chi squared image">
+    <title>Chi-square Calculator | Independence, Homogeneity & Goodness of Fit</title>
 </head>
 <body>
 
@@ -34,7 +34,7 @@
 
     <div id="buttoncontainer">
         <div id="rowbuttons">
-            <button class="mainbuttons" id="addrow" onclick="addrow()">Add Row</button>
+            <button class="mainbuttons" id="addrow" onclick="addrow('Group ',true)">Add Row</button>
             <button class="mainbuttons" id="deleterow" onclick="deleterow()">Delete Row</button>
         </div>
         <div id="columnbuttons">
@@ -43,23 +43,25 @@
         </div>
     </div>
 
-    <table id="maintable">
-        <tr>
-            <th></th>
-            <th>Category 1</th>
-            <th>Category 2</th>
-        </tr>
-        <tr>
-            <td>Group 1</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-        </tr>
-        <tr>
-            <td>Group 2</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-        </tr>
-    </table>
+    <section class="chisquareinput">
+        <table id="maintable">
+            <tr>
+                <th></th>
+                <th>Category 1</th>
+                <th>Category 2</th>
+            </tr>
+            <tr>
+                <td>Group 1</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Group 2</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+        </table>
+    </section>
     
     <button class="mainbuttons" id="submitbutton" onclick="tableresults()">Calculate</button>
 
@@ -94,6 +96,7 @@
 
     <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script src="scripts/chisquare.js"></script>
+    <script src="scripts/table.js"></script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org/",
@@ -104,6 +107,12 @@
           "applicationCategory": "EducationalApplication",
           "operatingSystem": "All"
         }
+        
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://eshan168.github.io/statcalculator?query={query}",
+            "query-input": "required name=query"
+          }
     </script>
     
 </body>
