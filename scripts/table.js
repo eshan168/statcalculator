@@ -58,6 +58,13 @@ function addcell(row) {
     row.appendChild(cell);
 }
 
+function clearinputs() {
+    let inputs = document.querySelectorAll("input");
+    for (let input of inputs){
+        input.value = '';
+    }
+}
+
 
 // Moving through table
 

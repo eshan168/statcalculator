@@ -5,31 +5,78 @@ window.onload = function() {
 }
 
 const table = document.getElementById("maintable");
+const tablecontainer = document.getElementById("regressiontable");
+const inputcontainer = document.getElementById("regressioninput");
 
 const submitbutton = document.getElementById("submitbutton");
 const select = document.getElementById("selecttest");
-const buttoncontainer = document.getElementById("buttoncontainer");
+const confidencelevel = document.getElementById("confidence");
 
 const df = document.getElementById("df");
 const teststatistic = document.getElementById("teststatistic");
 const pvalue = document.getElementById("pvalue");
 
+function switchinput() {
+    if (select.value == "data") {
+        console.log("switch")
+        inputdata();
+    }
+    else {
+        inputstats();
+    }
+}
+
+function inputdata() {
+    tablecontainer.style.display = "block";
+    inputcontainer.style.display = "none";
+}
+
+function inputstats() {
+    inputcontainer.style.display = "block";
+    tablecontainer.style.display = "none";
+}
+
 function results() {
     let data = getdata();
-    let correl = correlation(data[0],data[1])
+    let xm = jStat.mean(data[0]);
+    let ym = jStat.mean(data[1]);
+    let xs = jStat.stdev(data[0],true);
+    let ys = jStat.stdev(data[1],true);
+
+    let correl = correlation(data[0],data[1]);
+    let slope = round(correl * ys/xs);
+    let intercept = round(ym - slope*xm);
+
+    let freedom = data[0].length - 2;
+    let residualerror = standarderror(slope,intercept,data[0],data[1]);
+    let stdev = round(residualerror / (xs * Math.sqrt(data[0].length - 1)));
+    let criticalvalue = round(jStat.studentt.inv(confidencelevel.value,freedom));
+    let error = round(stdev * criticalvalue);
+
+    console.log(`y = ${slope}x + ${intercept}`);
+    console.log(slope-error, slope+error);
 }
 
 function correlation(x,y) {
-    let xs = jStat.stdev(x,false);
-    let ys = jStat.stdev(y,false);
     let xm = jStat.mean(x);
     let ym = jStat.mean(y);
-    let teststatistic = 0;
-    for (let i=0; i<=x.length; i++){
-        teststatistic += (((x-xm)/xs) * ((x-ym)/ys)) / (x.length-1)
+    let xs = jStat.stdev(x,true);
+    let ys = jStat.stdev(y,true);
+    let correl = 0;
+    for (let i=0; i<x.length; i++){
+        correl += (((x[i]-xm)/xs) * ((y[i]-ym)/ys)) / (x.length-1);
     }
-    console.log(xs);
-    return teststatistic;
+    return round(correl);
+}
+
+function standarderror(slope,intercept,x,y) {
+    if (x.length <= 2) return 0;
+    let error = 0;
+    for (let i=0; i<x.length; i++) {
+        let predicted = slope*x[i] + intercept;
+        error += (y[i]-predicted)**2 / (x.length-2);
+    }
+    return round(Math.sqrt(error));
 }
 
 function getdata() {
@@ -44,4 +91,8 @@ function getdata() {
         y.push(Number(inputs[1].value));
     }
     return [x,y];
+}
+
+function round(number) {
+    return Math.round(number*10000)/10000; 
 }

@@ -41,8 +41,8 @@ select:focus {
     box-shadow: 0 0 0 3px rgba(51, 109, 204, 0.25);
 }
 
-#buttoncontainer button {
-    display: inline-block;
+#clearbutton{
+    margin-bottom: 1.25rem;
 }
 
 #regressiontable {
@@ -84,6 +84,10 @@ table input {
     gap: 0.5rem;
 }
 
+#clearbutton {
+    width: 10rem;
+}
+
 #regressioninput {
     display: none;
 }
@@ -107,6 +111,10 @@ label {
     outline: 3px solid #3c83f4;
 }
 
+#confidence {
+    margin-top: 1rem;
+}
+
 #submitbutton {
     display: block;
     padding: 1em 2em;
@@ -121,6 +129,12 @@ label {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 8rem;
+}
+
+canvas {
+    width: 50%;
+    max-width: 30rem;
+    /* display: none; */
 }
 
 .results {

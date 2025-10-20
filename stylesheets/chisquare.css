@@ -59,6 +59,12 @@ input {
     width: 4rem;
 }
 
+#clearbutton {
+    width: 10rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+}
+
 #buttoncontainer {
     width: 38rem;
     display: flex;

@@ -12,10 +12,12 @@
 
     <h1>Slope T-test Calculator</h1>
 
-    <select onchange="changetable()" id="selecttest">
-        <option value="independence">Input Data</option>
-        <option value="homogeneity">Input Stats</option>
+    <select onchange="switchinput()" id="selecttest">
+        <option value="data">Input Data</option>
+        <option value="stats">Input Stats</option>
     </select>
+
+    <button class="mainbuttons inputs" id="clearbutton" onclick="clearinputs()">Clear</button>
 
     <div id="regressiontable">
         <table id="maintable">
@@ -37,20 +39,32 @@
         </table>
     </div>
 
-    <div id="regressioninput">
+    <div id="regressioninput" class="inputs">
         <label>X Mean</label>
         <input class="datainput">
     </div>
+
+    <select id="confidence">
+        <option value="0.9">80% Confidence Level</option>
+        <option value="0.95">90% Confidence Level</option>
+        <option value="0.975" selected>95% Confidence Level</option>
+        <option value="0.99">98% Confidence Level</option>
+        <option value="0.995">99% Confidence Level</option>
+        <option value="0.9975">99.5% Confidence Level</option>
+    </select>
     
     <button class="mainbuttons" id="submitbutton" onclick="results()">Calculate</button>
 
     <div id="resultscontainer">
+        <canvas id="myChart">
+        </canvas>
         <p class="results">Degrees of freedom: <strong id="df"></strong></p>
         <p class="results">Chi-squares statistic: <strong id="teststatistic"></strong></p>
         <p class="results">P-value: <strong id="pvalue"></strong></p>
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
     <script src="scripts/regression.js"></script>
     <script src="scripts/table.js"></script>
     
