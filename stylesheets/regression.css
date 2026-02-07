@@ -14,35 +14,41 @@ h1 {
     text-align: center;
 }
 
-select {
-    margin-bottom: 1.5rem;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2858a6; /* Darker blue text */
-    background-color: white; /* Light background for contrast */
-    border: 2px solid #336dcc; /* Match button theme */
-    border-radius: 0.5rem;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(51, 109, 204, 0.15);
-    transition: all 0.3s ease;
-}
-
-/* Hover */
-select:hover {
-    background-color: #f0f6ff; /* Subtle light blue background */
-    box-shadow: 0 4px 8px rgba(40, 88, 166, 0.2);
-}
-
-/* Focus */
-select:focus {
-    outline: none;
-    border-color: #2858a6;
-    box-shadow: 0 0 0 3px rgba(51, 109, 204, 0.25);
-}
-
 #clearbutton{
     margin-bottom: 1.25rem;
+}
+
+#switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0rem 0.5rem black ;
+}
+
+#tablebutton {
+    background-color: rgb(77, 151, 230);
+}
+
+#textbutton {
+    background-color: white;
+}
+
+#switch img {
+    width: 2rem;
+    padding: 0.3rem 0.3rem;
+    margin: 0.1rem 0.075rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+#switch img:hover {
+    background-color: rgb(198, 198, 198) !important;
+    cursor: pointer;
 }
 
 #regressiontable {
@@ -75,6 +81,16 @@ table input {
     width: 4rem;
 }
 
+#textinput {
+    display: none;
+}
+
+textarea {
+    resize: none;
+    height: 20rem;
+    width: 10rem;
+}
+
 #buttoncontainer {
     width: 38rem;
     display: flex;
@@ -86,29 +102,6 @@ table input {
 
 #clearbutton {
     width: 10rem;
-}
-
-#regressioninput {
-    display: none;
-}
-
-label {
-
-}
-
-.datainput {
-    font-size: 1rem;
-    text-align: center;
-    width: 6rem;
-    height: 2rem;
-    outline: 3px solid #2858a6;
-    border-radius: 0.25rem;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.datainput:focus {
-    outline: 3px solid #3c83f4;
 }
 
 #confidence {
@@ -129,12 +122,23 @@ label {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 8rem;
+    display: none;
+}
+
+#resultscontainer h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#graphcontainer {
+    width: 50%;
+    /* min-width: 5rem; */
 }
 
 canvas {
-    width: 50%;
-    max-width: 30rem;
-    /* display: none; */
+    display: none;
+    min-width: 20rem;
+    min-height: 10rem;
 }
 
 .results {
@@ -142,9 +146,30 @@ canvas {
     font-size: 1rem;
 }
 
+#equation {
+    font-size: 1.25rem;
+}
+
+#description {
+    text-align: center;
+    width: 50%;
+    margin-bottom: 2rem;
+    border: solid 2px #3a6fc4;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+}
+
+#description ul {
+    list-style-type: none
+}
+
+#calculator #regression {
+    background-color: rgb(77, 151, 230);
+}
+
 @media (max-width:768px) {
     html {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     #rowbuttons, #columnbuttons {
@@ -157,5 +182,13 @@ canvas {
 
     #buttoncontainer {
         width: 20rem;
+    }
+
+    #graphcontainer {
+        width: 90%;
+    }
+
+    #description {
+        width: 90%;
     }
 }

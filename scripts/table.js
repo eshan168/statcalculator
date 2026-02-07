@@ -60,8 +60,12 @@ function addcell(row) {
 
 function clearinputs() {
     let inputs = document.querySelectorAll("input");
+    let textareas = document.querySelectorAll("textarea");
     for (let input of inputs){
         input.value = '';
+    }
+    for (let textarea of textareas){
+        textarea.value = '';
     }
 }
 

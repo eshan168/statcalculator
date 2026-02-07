@@ -14,33 +14,6 @@ h1 {
     text-align: center;
 }
 
-select {
-    margin-bottom: 1.5rem;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2858a6; /* Darker blue text */
-    background-color: white; /* Light background for contrast */
-    border: 2px solid #336dcc; /* Match button theme */
-    border-radius: 0.5rem;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(51, 109, 204, 0.15);
-    transition: all 0.3s ease;
-}
-
-/* Hover */
-select:hover {
-    background-color: #f0f6ff; /* Subtle light blue background */
-    box-shadow: 0 4px 8px rgba(40, 88, 166, 0.2);
-}
-
-/* Focus */
-select:focus {
-    outline: none;
-    border-color: #2858a6;
-    box-shadow: 0 0 0 3px rgba(51, 109, 204, 0.25);
-}
-
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -66,6 +39,7 @@ input {
 }
 
 #buttoncontainer {
+    margin-top: 1.5rem;
     width: 38rem;
     display: flex;
     justify-content: space-between;
@@ -100,7 +74,7 @@ input {
 
 #info{
     text-align: center;
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
     width: 50%;
     border: solid 2px #3a6fc4;
     padding: 1rem 2rem;
@@ -119,6 +93,10 @@ input {
 #info ul{
     list-style-type: none;
     padding: 0;
+}
+
+#calculator #chi-square {
+    background-color: rgb(77, 151, 230);
 }
 
 @media (max-width:768px) {

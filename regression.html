@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Slope T-Test Calculator",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "description": "An online calculator that performs a t-test for the slope of a linear regression line, including confidence intervals, p-values, and regression graphs.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free slope t-test calculator for linear regression. Compute regression equation, standard error, confidence interval, t-statistic, p-value, and graph instantly. Perfect for AP Statistics and college students.">
     <link rel="stylesheet" href="stylesheets/regression.css">
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="icon" type="image/jpg" href="regression.png">
-    <title>Test for Slope of Regression Line</title>
+    <title>Slope T-Test Calculator | Linear Regression Confidence Interval</title>
 </head>
 <body>
 
-    <h1>Slope T-test Calculator</h1>
+    <h1>Slope T-Test Calculator</h1>
 
-    <select onchange="switchinput()" id="selecttest">
-        <option value="data">Input Data</option>
-        <option value="stats">Input Stats</option>
-    </select>
+    <div id="switch">
+        <img src="table.png" alt="Enter regression data using a table" id="tablebutton" onclick="viewtable()">
+        <img src="textbox.png" alt="Enter regression data using text input" id="textbutton" onclick="viewtextbox()">
+    </div>
 
     <button class="mainbuttons inputs" id="clearbutton" onclick="clearinputs()">Clear</button>
 
@@ -38,10 +56,10 @@
             </tr>
         </table>
     </div>
-
-    <div id="regressioninput" class="inputs">
-        <label>X Mean</label>
-        <input class="datainput">
+    
+    <div id="textinput">
+        <textarea id="xinput" placeholder="Enter X"></textarea>
+        <textarea id="yinput" placeholder="Enter Y"></textarea>
     </div>
 
     <select id="confidence">
@@ -52,21 +70,64 @@
         <option value="0.995">99% Confidence Level</option>
         <option value="0.9975">99.5% Confidence Level</option>
     </select>
-    
+
     <button class="mainbuttons" id="submitbutton" onclick="results()">Calculate</button>
 
+    <div id="graphcontainer">
+        <canvas id="myChart"></canvas>
+    </div>
+
     <div id="resultscontainer">
-        <canvas id="myChart">
-        </canvas>
-        <p class="results">Degrees of freedom: <strong id="df"></strong></p>
-        <p class="results">Chi-squares statistic: <strong id="teststatistic"></strong></p>
-        <p class="results">P-value: <strong id="pvalue"></strong></p>
+        <p class="results"><strong id="equation"></strong></p>
+        <p class="results" id="se"></p>
+        <p class="results" id="correl"></p>
+
+        <h2>Confidence Interval:</h2>
+        <p class="results" id="stdev"></p>
+        <p class="results" id="marginoferror"></p>
+        <p class="results" id="interval"></p>
+
+        <h2>T-Test:</h2>
+        <p class="results" id="df"></p>
+        <p class="results" id="teststatistic"></p>
+        <p class="results" id="pvalue"></p>
+    </div>
+
+    <section id="description">
+        <h2>Test for the Slope of a Regression Line</h2>
+        <p>
+            This slope t-test calculator performs a hypothesis test for the slope of a linear regression line.
+            It calculates the regression equation, standard error of the slope, confidence interval, t-statistic,
+            degrees of freedom, and p-value.
+        </p>
+    
+        <h3>When to Use a Slope T-Test</h3>
+        <p>
+            A slope t-test is used to determine whether there is a statistically significant linear relationship
+            between two quantitative variables. This test is commonly used in AP Statistics, introductory
+            statistics courses, and college-level data analysis.
+        </p>
+    
+        <h3>What This Calculator Shows</h3>
+            <p>
+                Least squares regression equation,
+                Standard error of the slope,
+                Confidence interval for the slope,
+                T-test statistic and p-value,
+                Regression graph
+            </p>
+    </section>
+
+    <h2>Other Calculators:</h2>
+    <div id="calculator">
+        <a href="index.html" id="chi-square">Chi-Suqares</a>
+        <a href="regression.html" id="regression">Regression</a>
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
-    <script src="scripts/regression.js"></script>
-    <script src="scripts/table.js"></script>
+    <script defer src="scripts/regression.js"></script>
+    <script defer src="scripts/table.js"></script>
     
 </body>
 </html>

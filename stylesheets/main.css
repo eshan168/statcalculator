@@ -20,3 +20,61 @@
     background-color: #1e4480; /* Even deeper when pressed */
     box-shadow: 0 2px 4px rgba(30, 68, 128, 0.4);
 }
+
+select {
+    margin-bottom: 0.5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2858a6; /* Darker blue text */
+    background-color: white; /* Light background for contrast */
+    border: 2px solid #336dcc; /* Match button theme */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(51, 109, 204, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+select:hover {
+    background-color: #f0f6ff; /* Subtle light blue background */
+    box-shadow: 0 4px 8px rgba(40, 88, 166, 0.2);
+}
+
+/* Focus */
+select:focus {
+    outline: none;
+    border-color: #2858a6;
+    box-shadow: 0 0 0 3px rgba(51, 109, 204, 0.25);
+}
+
+#calculator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0rem 0.5rem black ;
+}
+
+#calculator a {
+    text-align: center;
+    width: 8rem;
+    padding: 0.3rem 0.3rem;
+    margin: 0.1rem 0.075rem;
+    border-radius: 0.5rem;
+
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+#calculator a:hover {
+    background-color: rgb(198, 198, 198) !important;
+    cursor: pointer;
+    transition: all 0.3s;
+}
