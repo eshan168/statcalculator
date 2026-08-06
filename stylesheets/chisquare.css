@@ -128,3 +128,21 @@ input {
         width: 100%;
     }
 }
+
+@media (max-width:480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:300px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:225px) {
+    html {
+        font-size: 8px;
+    }
+}
