@@ -87,7 +87,8 @@ input {
 }
 
 #description{
-    width: 80%;
+    width: 100%;
+    margin: auto;
 }
 
 #info ul{
